@@ -1,0 +1,5 @@
+useDynLib(GeCKO, .registration=TRUE)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
+import(data.table)
+import(Biostrings)
