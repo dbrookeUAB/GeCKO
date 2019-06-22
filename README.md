@@ -90,7 +90,7 @@ man_genes
 
 ``` r
 # simple example
-make_gRNAsC(seqs = "TGTCAACGGGCGGCCACTGC",gene = "PAX6")
+make_gRNAs(seqs = "TGTCAACGGGCGGCCACTGC",gene = "PAX6")
 #>    gene_id  gRNA                 seqs     idt_id_F
 #> 1:    PAX6 gRNA1 TGTCAACGGGCGGCCACTGC F-PAX6_gRNA1
 #>             oligo-1 (5'->3')     idt_id_R          oligo-2 (5'->3')
@@ -100,7 +100,7 @@ make_gRNAsC(seqs = "TGTCAACGGGCGGCCACTGC",gene = "PAX6")
 
 ```r
 # using data.tables directly for a single gene
-make_gRNAsC(single_gene[,seq], gene = single_gene[,gene_id])
+make_gRNAs(single_gene[,seq], gene = single_gene[,gene_id])
 #>    gene_id  gRNA                 seqs      idt_id_F
 #> 1:   GAPDH gRNA1 TTCCTCACCTGATGATCTTG F-GAPDH_gRNA1
 #> 2:   GAPDH gRNA2 TCTGCTGTAGGCTCATTTGC F-GAPDH_gRNA2
@@ -120,7 +120,7 @@ make_gRNAsC(single_gene[,seq], gene = single_gene[,gene_id])
 
 ```r
 # using data.tables directly for a multiple genes
-make_gRNAsC(many_genes[,seq], gene = many_genes[,gene_id])
+make_gRNAs(many_genes[,seq], gene = many_genes[,gene_id])
 #>     gene_id  gRNA                 seqs      idt_id_F
 #>  1:   CCND1 gRNA1 CGAAGGTCTGCGCGTGTTTG F-CCND1_gRNA1
 #>  2:   CCND1 gRNA2 CTTGCACACCCACCGACGTG F-CCND1_gRNA2
@@ -166,7 +166,7 @@ make_gRNAsC(many_genes[,seq], gene = many_genes[,gene_id])
 ``` r
 # add2 uses a list input
 library(GeCKO)
-make_gRNAsC(seqs = "TGTCAACGGGCGGCCACTGC",gene = "PAX6",
+make_gRNAs(seqs = "TGTCAACGGGCGGCCACTGC",gene = "PAX6",
             add2 = list(
               seq1_5p = "new",
               seq1_3p = "ends",
