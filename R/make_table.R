@@ -1,4 +1,4 @@
-make_table <- function(x, name ){
+.make_table <- function(x, name ){
   require(data.table)
   result <- as.data.table(as.data.frame(x),
                           keep.rownames = "gene_id"
