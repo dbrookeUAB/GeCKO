@@ -1,6 +1,7 @@
 # GeCKO
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=master)](https://travis-ci.org/dbrookeUAB/GeCKO)
 <!-- badges: end -->
 
 The goal of GeCKO is to ...
