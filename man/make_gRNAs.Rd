@@ -8,7 +8,7 @@ make_gRNAs(seqs, gene = NULL, add2 = list(seq1_5p = "CACCG", seq1_3p =
   "", seq2_5p = "AAAC", seq2_3p = "C"))
 }
 \arguments{
-\item{gene}{}
+\item{add2}{}
 }
 \description{
 Make gRNAs from GeCKO Library
