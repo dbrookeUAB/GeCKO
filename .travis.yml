@@ -1,5 +1,6 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
+before_install: R -e 'source("https://install-github.me/r-lib/remotes")'
 deploy:
   provider: script
   script: Rscript -e 'pkgdown::deploy_site_github()'
