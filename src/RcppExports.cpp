@@ -6,21 +6,35 @@
 using namespace Rcpp;
 
 // oligo_mod
-CharacterVector oligo_mod(std::vector<std::string> seq5p, std::vector<std::string> seqMain, std::vector<std::string> seq3p);
+CharacterVector oligo_mod(std::string seq5p, std::string seqMain, std::string seq3p);
 RcppExport SEXP _GeCKO_oligo_mod(SEXP seq5pSEXP, SEXP seqMainSEXP, SEXP seq3pSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::vector<std::string> >::type seq5p(seq5pSEXP);
-    Rcpp::traits::input_parameter< std::vector<std::string> >::type seqMain(seqMainSEXP);
-    Rcpp::traits::input_parameter< std::vector<std::string> >::type seq3p(seq3pSEXP);
+    Rcpp::traits::input_parameter< std::string >::type seq5p(seq5pSEXP);
+    Rcpp::traits::input_parameter< std::string >::type seqMain(seqMainSEXP);
+    Rcpp::traits::input_parameter< std::string >::type seq3p(seq3pSEXP);
     rcpp_result_gen = Rcpp::wrap(oligo_mod(seq5p, seqMain, seq3p));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Voligo_mod
+CharacterVector Voligo_mod(std::vector<std::string> seqMain, std::string seq5p, std::string seq3p);
+RcppExport SEXP _GeCKO_Voligo_mod(SEXP seqMainSEXP, SEXP seq5pSEXP, SEXP seq3pSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type seqMain(seqMainSEXP);
+    Rcpp::traits::input_parameter< std::string >::type seq5p(seq5pSEXP);
+    Rcpp::traits::input_parameter< std::string >::type seq3p(seq3pSEXP);
+    rcpp_result_gen = Rcpp::wrap(Voligo_mod(seqMain, seq5p, seq3p));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"_GeCKO_oligo_mod", (DL_FUNC) &_GeCKO_oligo_mod, 3},
+    {"_GeCKO_Voligo_mod", (DL_FUNC) &_GeCKO_Voligo_mod, 3},
     {NULL, NULL, 0}
 };
 
