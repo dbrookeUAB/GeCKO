@@ -2,7 +2,6 @@
 
 <!-- badges: start -->
 [![Build Status](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=master)](https://travis-ci.org/dbrookeUAB/GeCKO)
-[![Travis build status](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=master)](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=master)
 [![Code Size](https://img.shields.io/github/languages/code-size/dbrookeUAB/GeCKO.svg)](https://github.com/dbrookeUAB/GeCKO)
 [![Last Commit](https://img.shields.io/github/last-commit/dbrookeUAB/GeCKO.svg)](https://github.com/dbrookeUAB/GeCKO/commits/master)
 <!-- badges: end -->
@@ -18,7 +17,11 @@ remotes::install_github("dbrookeUAB/GeCKO")
 
 ## Basic Usage
 
-This is a basic example which shows you how to solve a common problem:
+Make sure to cite this paper. 
+[O. Shalem et al., Genome-scale CRISPR-Cas9 knockout screening in human cells. Science (80-. ). 343, 84–87 (2014)](https://science.sciencemag.org/content/343/6166/84)
+
+
+[Zhang Lab Website](http://genome-engineering.org)
 
 ### Loading gRNA sequences from the GeCKO Library
 
