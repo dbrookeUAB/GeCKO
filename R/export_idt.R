@@ -1,6 +1,8 @@
-export_IDT <- function(Sequence, Name, file,...){
+export_IDT <- function(x, file,...){
   require(data.table)
-  tmp <- data.table(Name, Sequence, Scale = "25nmS", Purifcation = "STD")
+  tmp <- prep_idt(x)
+  
+  tmp <- data.table(Name = tmp$Name,Sequence =tmp$Sequence, Scale = "25nmS", Purifcation = "STD")
   if(grepl("\\.xlsx$",file)){
     fwrite(tmp,file = file,...)
   } else {
