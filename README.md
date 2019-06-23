@@ -1,7 +1,7 @@
 # GeCKO
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=master)](https://travis-ci.org/dbrookeUAB/GeCKO)
+[![Travis build status](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=master)](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=master)
 
 [![Code Size](https://img.shields.io/github/languages/code-size/dbrookeUAB/GeCKO.svg)](https://github.com/dbrookeUAB/GeCKO)
 
