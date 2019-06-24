@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Make gRNAs from GeCKO Library — make_gRNAs • GeCKO</title>
+<title>Make Table — make_table • GeCKO</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Make gRNAs from GeCKO Library — make_gRNAs" />
+<meta property="og:title" content="Make Table — make_table" />
 
-<meta property="og:description" content="Make gRNAs from GeCKO Library" />
+<meta property="og:description" content="Make Table" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -102,68 +102,39 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Make gRNAs from GeCKO Library</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dbrookeUAB/GeCKO/blob/master/R/make_gRNAs.R'><code>R/make_gRNAs.R</code></a></small>
-    <div class="hidden name"><code>make_gRNAs.Rd</code></div>
+    <h1>Make Table</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dbrookeUAB/GeCKO/blob/master/R/make_table.R'><code>R/make_table.R</code></a></small>
+    <div class="hidden name"><code>make_table.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Make gRNAs from GeCKO Library</p>
+    <p>Make Table</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>make_gRNAs</span>(<span class='no'>seqs</span>, <span class='kw'>gene</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>add2</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>seq1_5p</span> <span class='kw'>=</span> <span class='st'>"CACCG"</span>, <span class='kw'>seq1_3p</span> <span class='kw'>=</span>
-  <span class='st'>""</span>, <span class='kw'>seq2_5p</span> <span class='kw'>=</span> <span class='st'>"AAAC"</span>, <span class='kw'>seq2_3p</span> <span class='kw'>=</span> <span class='st'>"C"</span>))</pre>
+    <pre class="usage"><span class='fu'>make_table</span>(<span class='no'>x</span>, <span class='no'>name</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>add2</th>
+      <th>x</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>name</th>
       <td></td>
     </tr>
     </table>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='co'># Make oligos from a single sequence</span>
-
-<span class='no'>seq</span> <span class='kw'>&lt;-</span> <span class='st'>"TTCCTCACCTGATGATCTTG"</span>
-<span class='no'>gene</span> <span class='kw'>&lt;-</span> <span class='st'>"GAPDH"</span>
-<span class='fu'>make_gRNAs</span>(<span class='no'>seq</span>, <span class='no'>gene</span>)</div><div class='output co'>#&gt;    gene_id                  seq          oligo-1 (5'-&gt;3')
-#&gt; 1:   GAPDH TTCCTCACCTGATGATCTTG CACCGTTCCTCACCTGATGATCTTG
-#&gt;             oligo-2 (5'-&gt;3')
-#&gt; 1: AAACCAAGATCATCAGGTGAGGAAC</div><div class='input'>
-<span class='co'># Make oligos for multiple gRNA sequences</span>
-<span class='no'>human</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_library.html'>get_library</a></span>(<span class='kw'>species</span> <span class='kw'>=</span> <span class='st'>'human'</span>)</div><div class='output co'>#&gt; <span class='message'>Loading required package: fst</span></div><div class='input'>
-<span class='no'>seq</span> <span class='kw'>&lt;-</span> <span class='no'>human</span>[<span class='no'>gene_id</span><span class='kw'>==</span><span class='st'>'GAPDH'</span>, <span class='no'>seq</span>]
-<span class='no'>gene</span> <span class='kw'>&lt;-</span> <span class='no'>human</span>[<span class='no'>gene_id</span><span class='kw'>==</span><span class='st'>'GAPDH'</span>,<span class='no'>gene_id</span>]
-
-<span class='fu'>make_gRNAs</span>(<span class='kw'>seqs</span> <span class='kw'>=</span> <span class='no'>seq</span>, <span class='kw'>gene</span> <span class='kw'>=</span> <span class='no'>gene</span>)</div><div class='output co'>#&gt;    gene_id                  seq          oligo-1 (5'-&gt;3')
-#&gt; 1:   GAPDH TTCCTCACCTGATGATCTTG CACCGTTCCTCACCTGATGATCTTG
-#&gt; 2:   GAPDH TCTGCTGTAGGCTCATTTGC CACCGTCTGCTGTAGGCTCATTTGC
-#&gt; 3:   GAPDH TTCCACTCACTCCTGGAAGA CACCGTTCCACTCACTCCTGGAAGA
-#&gt; 4:   GAPDH ACTCACCCCAGCCTTCTCCA CACCGACTCACCCCAGCCTTCTCCA
-#&gt; 5:   GAPDH CACTGGCGTCTTCACCACCA CACCGCACTGGCGTCTTCACCACCA
-#&gt; 6:   GAPDH TTCCAATATGATTCCACCCA CACCGTTCCAATATGATTCCACCCA
-#&gt;             oligo-2 (5'-&gt;3')
-#&gt; 1: AAACCAAGATCATCAGGTGAGGAAC
-#&gt; 2: AAACGCAAATGAGCCTACAGCAGAC
-#&gt; 3: AAACTCTTCCAGGAGTGAGTGGAAC
-#&gt; 4: AAACTGGAGAAGGCTGGGGTGAGTC
-#&gt; 5: AAACTGGTGGTGAAGACGCCAGTGC
-#&gt; 6: AAACTGGGTGGAATCATATTGGAAC</div><div class='input'>
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+                </ul>
 
   </div>
 </div>
