@@ -2,7 +2,6 @@
 #'
 #' @param seqs
 #' @param gene
-#' @param add2
 #'
 #' @return
 #' @export
@@ -28,26 +27,17 @@
 #' make_gRNAs(seqs = seq, gene = gene)
 #' 
 make_gRNAs <- function(seqs,
-                        gene = NULL,
-                        add2 = list(
-                          seq1_5p = "CACCG",
-                          seq1_3p = "",
-                          seq2_5p = "AAAC",
-                          seq2_3p = "C"
-                        )) {
+                       gene = NULL,
+                       seq1_5p = "CACCG",
+                       seq1_3p = "",
+                       seq2_5p = "AAAC",
+                       seq2_3p = "C") {
   require(data.table, quietly = TRUE, warn.conflicts = FALSE)
   if (is.null(gene)) {
     gRNA_name <- "gRNA-"
   } else {
     gRNA_name <- paste0(gene, ".gRNA-")
   }
-  
-  # set gRNA 5' and 3' modifications ----------------------------------------
-  
-  seq1_5p <- add2$seq1_5p   # there has to be a more sophisticated way to do this
-  seq1_3p <- add2$seq1_3p
-  seq2_5p <- add2$seq2_5p
-  seq2_3p <- add2$seq2_3p
 
   # define gRNAs and make complement ----------------------------------------
   

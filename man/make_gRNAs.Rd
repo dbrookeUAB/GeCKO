@@ -4,11 +4,11 @@
 \alias{make_gRNAs}
 \title{Make gRNAs from GeCKO Library}
 \usage{
-make_gRNAs(seqs, gene = NULL, add2 = list(seq1_5p = "CACCG", seq1_3p =
-  "", seq2_5p = "AAAC", seq2_3p = "C"))
+make_gRNAs(seqs, gene = NULL, seq1_5p = "CACCG", seq1_3p = "",
+  seq2_5p = "AAAC", seq2_3p = "C")
 }
 \arguments{
-\item{add2}{}
+\item{gene}{}
 }
 \description{
 Make gRNAs from GeCKO Library
