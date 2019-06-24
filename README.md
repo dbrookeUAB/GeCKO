@@ -1,8 +1,7 @@
 # GeCKO
 
 <!-- badges: start -->
-[![Build Status](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=master)](https://travis-ci.org/dbrookeUAB/GeCKO)
-[![Code Size](https://img.shields.io/github/languages/code-size/dbrookeUAB/GeCKO.svg)](https://github.com/dbrookeUAB/GeCKO)
+[![Build Status](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=master)](https://travis-ci.org/dbrookeUAB/GeCKO)[![Developmental Status](https://travis-ci.org/dbrookeUAB/GeCKO.svg?branch=Developmental)](https://travis-ci.org/dbrookeUAB/GeCKO)[![Code Size](https://img.shields.io/github/languages/code-size/dbrookeUAB/GeCKO.svg)](https://github.com/dbrookeUAB/GeCKO)
 [![Last Commit](https://img.shields.io/github/last-commit/dbrookeUAB/GeCKO.svg)](https://github.com/dbrookeUAB/GeCKO/commits/master)
 [![Codecov test coverage](https://codecov.io/gh/dbrookeUAB/GeCKO/branch/master/graph/badge.svg)](https://codecov.io/gh/dbrookeUAB/GeCKO?branch=master)
 <!-- badges: end -->
