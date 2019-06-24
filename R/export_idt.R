@@ -1,3 +1,14 @@
+#' Export gRNA oligos for IDT 
+#'
+#' @param x 
+#' @param file 
+#' @param ... 
+#'
+#' @return
+#' @export
+#' @import data.table
+#'
+#' @examples
 export_IDT <- function(x, file,...){
   require(data.table)
   tmp <- prep_idt(x)

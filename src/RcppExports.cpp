@@ -31,10 +31,22 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// revComplement
+CharacterVector revComplement(std::vector<std::string> seqMain);
+RcppExport SEXP _GeCKO_revComplement(SEXP seqMainSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type seqMain(seqMainSEXP);
+    rcpp_result_gen = Rcpp::wrap(revComplement(seqMain));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_GeCKO_oligo_mod", (DL_FUNC) &_GeCKO_oligo_mod, 3},
     {"_GeCKO_Voligo_mod", (DL_FUNC) &_GeCKO_Voligo_mod, 3},
+    {"_GeCKO_revComplement", (DL_FUNC) &_GeCKO_revComplement, 1},
     {NULL, NULL, 0}
 };
 

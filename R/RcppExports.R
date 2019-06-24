@@ -2,10 +2,14 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 oligo_mod <- function(seq5p, seqMain, seq3p) {
-    .Call(`_GeCKO_oligo_mod`, seq5p, seqMain, seq3p)
+    .Call('_GeCKO_oligo_mod', PACKAGE = 'GeCKO', seq5p, seqMain, seq3p)
 }
 
 Voligo_mod <- function(seqMain, seq5p, seq3p) {
-    .Call(`_GeCKO_Voligo_mod`, seqMain, seq5p, seq3p)
+    .Call('_GeCKO_Voligo_mod', PACKAGE = 'GeCKO', seqMain, seq5p, seq3p)
+}
+
+revComplement <- function(seqMain) {
+    .Call('_GeCKO_revComplement', PACKAGE = 'GeCKO', seqMain)
 }
 

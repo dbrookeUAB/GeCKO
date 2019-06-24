@@ -4,6 +4,8 @@
 #'
 #' @return
 #' @export
+#' 
+#' @importFrom fst read_fst
 #'
 #' @examples
 get_library <- function(species = "human"){

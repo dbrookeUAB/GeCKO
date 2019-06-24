@@ -1,3 +1,13 @@
+#' Prep results from make_gRNAs for export_idt
+#'
+#' @param x 
+#'
+#' @return
+#' @export
+#' 
+#' @importFrom stringr str_extract
+#'
+#' @examples
 prep_idt <- function(x){
   result <- copy(x)
   setkey(result, gene_id)

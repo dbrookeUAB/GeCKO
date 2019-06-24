@@ -8,17 +8,34 @@
 #' @export
 #'
 #' @importFrom stringr str_extract
+#' @importFrom Rcpp evalCpp
+#' @useDynLib GeCKO
+#' 
 #' @examples
+#' 
+#' # Make oligos from a single sequence
+#' 
+#' seq <- "TTCCTCACCTGATGATCTTG"
+#' gene <- "GAPDH"
+#' make_gRNAsC(seq, gene)
+#' 
+#' # Make oligos for multiple gRNA sequences
+#' human <- get_library(species = 'human')
+#' 
+#' seq <- human[gene_id=='GAPDH', seq]
+#' gene <- human[gene_id=='GAPDH',gene_id]
+#' 
+#' make_gRNAs(seqs = seq, gene = gene)
+#' 
 make_gRNAs <- function(seqs,
-                       gene = NULL,
-                       add2 = list(
-                         seq1_5p = "CACCG",
-                         seq1_3p = "",
-                         seq2_5p = "AAAC",
-                         seq2_3p = "C"
-                       )) {
+                        gene = NULL,
+                        add2 = list(
+                          seq1_5p = "CACCG",
+                          seq1_3p = "",
+                          seq2_5p = "AAAC",
+                          seq2_3p = "C"
+                        )) {
   require(data.table, quietly = TRUE, warn.conflicts = FALSE)
-  require(Biostrings)
   if (is.null(gene)) {
     gRNA_name <- "gRNA-"
   } else {
@@ -27,66 +44,22 @@ make_gRNAs <- function(seqs,
   
   # set gRNA 5' and 3' modifications ----------------------------------------
   
-  seq1_5p <-
-    add2$seq1_5p   # there has to be a more sophisticated way to do this
+  seq1_5p <- add2$seq1_5p   # there has to be a more sophisticated way to do this
   seq1_3p <- add2$seq1_3p
   seq2_5p <- add2$seq2_5p
   seq2_3p <- add2$seq2_3p
+
+  # define gRNAs and make complement ----------------------------------------
   
-  # define gRNAs ------------------------------------------------------------
-  
-  gRNA1 <-
-    as.character(Biostrings::DNAStringSet(seqs))                       # 2114us
-  
-  
-  
-  # make complement ---------------------------------------------------------
-  gRNA2 <-
-    as.character(Biostrings::reverseComplement(Biostrings::DNAStringSet(seqs)))                     # 439us
-  
+  gRNA1 <- seqs
+  gRNA2 <- revComplement(seqs)
   
   # oligo modifications -----------------------------------------------------
-  gRNA1 <- Voligo_mod( gRNA1,seq1_5p, seq1_3p)
-  names(gRNA1) <- paste0(gRNA_name, gene)
-  gRNA2 <- Voligo_mod(gRNA2, seq2_5p, seq2_3p)
-  names(gRNA2) <- paste0(gRNA_name, gene)# 1181us
-  
-  # make table (Benchmark = 1.503ms) ----------------------------------------
-  gRNA1_dt <- make_table(gRNA1, "oligo-1 (5'->3')")     # 1504us
-  gRNA2_dt <- make_table(gRNA2, "oligo-2 (5'->3')")     # 1504us
-  
-  result <- gRNA1_dt[gRNA2_dt]
-  if(!is.null(gene)){
-    result[, gene_id := paste0(gene)][]
-  } else {
-    result[, gene_id := paste0(gRNA_name)][]
-  }
-  
-  
-  result[, .N, gene_id] -> tmp
-  setkey(tmp, gene_id)
-  tmp[result] -> result
-  result[, seqs := seqs][]
-  
-  for (i in 1:6) {
-    result[N == i, idt_id_F := paste0("F-", gene_id, paste0("_gRNA", 1:i))]
-  }
-  
-  for (i in 1:6) {
-    result[N == i, idt_id_R := paste0("R-", gene_id, paste0("_gRNA", 1:i))]
-  }
-  
-  result[, gRNA := stringr::str_extract(idt_id_F, "gRNA\\d")][]
-  result <-
-    result[, .SD, .SDcols = c(
-      "gene_id",
-      "gRNA",
-      "seqs",
-      "idt_id_F",
-      "oligo-1 (5'->3')",
-      "idt_id_R",
-      "oligo-2 (5'->3')"
-    )]
+  result <- data.table(gene_id = gene,
+                       seq = seqs,
+                       `oligo-1 (5'->3')` = Voligo_mod( gRNA1,seq1_5p, seq1_3p),
+                       `oligo-2 (5'->3')` = Voligo_mod(gRNA2, seq2_5p, seq2_3p)
+  )
   
   return(result)
 }

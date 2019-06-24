@@ -13,3 +13,20 @@ make_gRNAs(seqs, gene = NULL, add2 = list(seq1_5p = "CACCG", seq1_3p =
 \description{
 Make gRNAs from GeCKO Library
 }
+\examples{
+
+# Make oligos from a single sequence
+
+seq <- "TTCCTCACCTGATGATCTTG"
+gene <- "GAPDH"
+make_gRNAsC(seq, gene)
+
+# Make oligos for multiple gRNA sequences
+human <- get_library(species = 'human')
+
+seq <- human[gene_id=='GAPDH', seq]
+gene <- human[gene_id=='GAPDH',gene_id]
+
+make_gRNAs(seqs = seq, gene = gene)
+
+}
