@@ -13,8 +13,9 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Access and edit gRNA sequences from the GeCKO Library">
 <meta property="og:description" content="Access and edit gRNA sequences from the GeCKO Library">
 <meta property="og:image" content="/logo.png">
@@ -45,7 +46,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -59,7 +60,40 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/dbrookeUAB/GeCKO">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fab fa fab fa-r-project fa-lg"></span>
+     
+    Other Packages
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="https://www.fstrnaseq.deweybrooke.org/">FSTrnaseq</a>
+    </li>
+    <li>
+      <a href="https://www.gecko.deweybrooke.org/">GeCKO</a>
+    </li>
+    <li>
+      <a href="https://miknn.deweybrooke.org/">miknn</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://www.deweybrooke.org/">
+    <span class="fas fa fas fa-user-circle fa-lg"></span>
+     
+    Dewey Brooke
+  </a>
+</li>
+<li>
+  <a href="http://twitter.com/deweybrooke1">
+    <span class="fab fa fab fa-twitter fa-lg"></span>
      
   </a>
 </li>
@@ -72,6 +106,7 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="contents col-md-9">
 <div id="gecko" class="section level1">
@@ -84,7 +119,7 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("remotes")</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"dbrookeUAB/GeCKO"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/remotes/man/install_github.html">install_github</a></span>(<span class="st">"dbrookeUAB/GeCKO"</span>)</a></code></pre></div>
 </div>
 <div id="basic-usage" class="section level2">
 <h2 class="hasAnchor">
@@ -94,7 +129,7 @@
 <div id="loading-grna-sequences-from-the-gecko-library" class="section level3">
 <h3 class="hasAnchor">
 <a href="#loading-grna-sequences-from-the-gecko-library" class="anchor"></a>Loading gRNA sequences from the GeCKO Library</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(GeCKO)</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(GeCKO)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">human &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_library.html">get_library</a></span>(<span class="dt">species =</span> <span class="st">"human"</span>) </a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co"># not run</span></a>
@@ -116,7 +151,7 @@
 <div id="looking-for-a-specific-gene" class="section level4">
 <h4 class="hasAnchor">
 <a href="#looking-for-a-specific-gene" class="anchor"></a>Looking for a specific gene</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(GeCKO)</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(GeCKO)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">human &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_library.html">get_library</a></span>(<span class="dt">species =</span> <span class="st">"human"</span>) </a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co"># using data.table notation DT[i,j,by]</span></a>
@@ -133,9 +168,9 @@
 <div id="retrieving-multiple-genes" class="section level4">
 <h4 class="hasAnchor">
 <a href="#retrieving-multiple-genes" class="anchor"></a>Retrieving Multiple Genes</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(GeCKO)</a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(GeCKO)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">human &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_library.html">get_library</a></span>(<span class="dt">species =</span> <span class="st">"human"</span>) </a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">many_genes&lt;-human[gene_id <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"GAPDH"</span>,<span class="st">"TP53"</span>, <span class="st">"CCND1"</span>)]</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">many_genes&lt;-human[gene_id <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"GAPDH"</span>,<span class="st">"TP53"</span>, <span class="st">"CCND1"</span>)]</a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">man_genes</a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt;     gene_id          UID                  seq</span></a>
 <a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt;  1:   CCND1 HGLibA_08071 CGAAGGTCTGCGCGTGTTTG</span></a>
@@ -156,7 +191,7 @@
 <a class="sourceLine" id="cb4-21" data-line-number="21"><span class="co">#&gt; 16:    TP53 HGLibB_50984 GAGCGCTGCTCAGATAGCGA</span></a>
 <a class="sourceLine" id="cb4-22" data-line-number="22"><span class="co">#&gt; 17:    TP53 HGLibB_50985 CCCCTTGCCGTCCCAAGCAA</span></a>
 <a class="sourceLine" id="cb4-23" data-line-number="23"><span class="co">#&gt; 18:    TP53 HGLibB_50986 ACTTCCTGAAAACAACGTTC</span></a></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(GeCKO)</a>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(GeCKO)</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2">human &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_library.html">get_library</a></span>(<span class="dt">species =</span> <span class="st">"human"</span>) </a>
 <a class="sourceLine" id="cb5-3" data-line-number="3">single_gene&lt;-<span class="st"> </span>human[gene_id<span class="op">==</span><span class="st">"GAPDH"</span>]</a>
 <a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co"># simple example</span></a>
@@ -165,7 +200,7 @@
 <a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 1:    PAX6 TGTCAACGGGCGGCCACTGC CACCGTGTCAACGGGCGGCCACTGC</span></a>
 <a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;             oligo-2 (5'-&gt;3')</span></a>
 <a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; 1: AAACGCAGTGGCCGCCCGTTGACAC</span></a></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(GeCKO)</a>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(GeCKO)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">human &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_library.html">get_library</a></span>(<span class="dt">species =</span> <span class="st">"human"</span>) </a>
 <a class="sourceLine" id="cb6-3" data-line-number="3">single_gene&lt;-<span class="st"> </span>human[gene_id<span class="op">==</span><span class="st">"GAPDH"</span>]</a>
 <a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co"># using data.tables directly for a single gene</span></a>
@@ -184,10 +219,10 @@
 <a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt; 4: AAACTGGAGAAGGCTGGGGTGAGTC</span></a>
 <a class="sourceLine" id="cb6-18" data-line-number="18"><span class="co">#&gt; 5: AAACTGGTGGTGAAGACGCCAGTGC</span></a>
 <a class="sourceLine" id="cb6-19" data-line-number="19"><span class="co">#&gt; 6: AAACTGGGTGGAATCATATTGGAAC</span></a></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(GeCKO)</a>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(GeCKO)</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2">human &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_library.html">get_library</a></span>(<span class="dt">species =</span> <span class="st">"human"</span>) </a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">many_genes&lt;-human[gene_id <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"GAPDH"</span>,<span class="st">"TP53"</span>, <span class="st">"CCND1"</span>)]</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">many_genes&lt;-human[gene_id <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"GAPDH"</span>,<span class="st">"TP53"</span>, <span class="st">"CCND1"</span>)]</a>
 <a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co"># using data.tables directly for a multiple genes</span></a>
 <a class="sourceLine" id="cb7-6" data-line-number="6"><span class="kw"><a href="reference/make_gRNAs.html">make_gRNAs</a></span>(many_genes[,seq], <span class="dt">gene =</span> many_genes[,gene_id])</a>
 <a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#&gt;     gene_id                  seq          oligo-1 (5'-&gt;3')</span></a>
@@ -235,9 +270,9 @@
 <h2 class="hasAnchor">
 <a href="#using-custom-5-and-3-sequences-for-grna-oligos" class="anchor"></a>Using custom 5’ and 3’ sequences for gRNA oligos</h2>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># add2 uses a list input</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(GeCKO)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(GeCKO)</a>
 <a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw"><a href="reference/make_gRNAs.html">make_gRNAs</a></span>(<span class="dt">seqs =</span> <span class="st">"TGTCAACGGGCGGCCACTGC"</span>,<span class="dt">gene =</span> <span class="st">"PAX6"</span>,</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">            <span class="dt">add2 =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">            <span class="dt">add2 =</span> <span class="kw"><a href="https://rdrr.io/r/base/list.html">list</a></span>(</a>
 <a class="sourceLine" id="cb8-5" data-line-number="5">              <span class="dt">seq1_5p =</span> <span class="st">"new"</span>,</a>
 <a class="sourceLine" id="cb8-6" data-line-number="6">              <span class="dt">seq1_3p =</span> <span class="st">"ends"</span>,</a>
 <a class="sourceLine" id="cb8-7" data-line-number="7">              <span class="dt">seq2_5p =</span> <span class="st">"for"</span>, </a>
@@ -270,7 +305,7 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Dewey Brooke <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-4290-3809" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<li>Dewey Brooke <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-4290-3809" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 </ul>
 </div>
 
@@ -287,17 +322,20 @@
 </div>
 </div>
 
+
       <footer><div class="copyright">
   <p>Developed by Dewey Brooke.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
