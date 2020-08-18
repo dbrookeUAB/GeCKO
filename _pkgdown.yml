@@ -21,8 +21,10 @@ navbar:
       icon: "fab fa-r-project fa-lg"
       text: Other Packages
       menu:
-      - text: FSTrnaseq
-        href: https://fstrnaseq.deweybrooke.org/
+      - text: TCGAseq
+        href: https://tcgaseq.deweybrooke.org/
+      - text: GTEXseq
+        href: https://gtexseq.deweybrooke.org/
       - text: GeCKO
         href: https://gecko.deweybrooke.org/
       - text: miknn
